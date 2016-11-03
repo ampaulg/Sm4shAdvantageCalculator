@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script src="shieldCalc.js"></script>
+	<h1>Shield advantage calculator</h1>
+	
+	<p>Startup (can leave this blank for aerials)</p>
+	<input type="number" id="startup">
+	<p>FAF (or landing lag for aerials)</p>
+	<input type="number" id="faf">
+	<p>Damage</p>
+	<input type="number" id="damage">
+    <br/>
+    <select id="air">
+    <option value="0">Ground</option>
+    <option value="1">Aerial</option>
+    </select>
+    <select id="type">
+    <option value="0">Normal</option>
+    <option value="1">Projectile</option>
+    </select>
+    
+    <button onclick="getAdv()">Go</button>
+    
+	<p>Shield stun frames: <bdi id="results"></bdi></p>
+	<p>Advantage: <bdi id="results2"></bdi></p>
+	<p>This calculator makes the following assumptions:</p>
+    <ul>
+    	<li>Grounded moves and projectiles hit on their first active frame. If you hit later in the animation
+            (which is likely for projectiles) you will have more advantage.</li>
+        <li>Aerial moves do not autocancel, and hit on the frame before you land. Your result will vary
+        if you autocancel and/or you hit earlier.</li>
+        <li>The defender does not powershield</li>
+    </ul>
+    <p>For multihits, make sure you use the last hit's values to get the right results (ex. the second hit of ZSS up tilt and not the first).</p>
+</body>
+</html>
