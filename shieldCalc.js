@@ -17,7 +17,7 @@ function getAdv(){
     else recovery = faf;
 	
 	var stun;
-	if (type==0) stun = (damage/1.75)+2;
+	if (type==0) stun = (damage/1.72)+2;
 	else stun = (damage/3.5)+2;
 	var stunRounded = Math.floor(stun);
 	var advantage = stunRounded - recovery;
